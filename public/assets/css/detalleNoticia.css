@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 80px; 
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #222, #444);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.back-button {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #007bff;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1.6rem;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.back-button.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.back-button:hover {
+  background: #0056b3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.layout-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1800px;
+  margin: 20px auto;
+  padding: 0 20px;
+  min-height: calc(100vh - 120px);
+}
+
+.sidebar {
+  flex: 0 0 20%;
+  background-color: #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.news-content {
+  flex: 0 0 60%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.detalle-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.imagen-container {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.imagen-container:hover {
+  transform: scale(1.03);
+}
+
+.detalle-contenido {
+  padding: 20px;
+}
+
+.detalle-titulo {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.detalle-subtitulo {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #555;
+  font-style: italic;
+}
+
+.detalle-fecha,
+.detalle-categoria {
+  font-size: 1.5rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.detalle-texto {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+  margin-top: 20px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 1200px) {
+  .sidebar {
+      flex: 0 0 25%;
+  }
+  .news-content {
+      flex: 0 0 50%;
+  }
+  .detalle-titulo {
+      font-size: 2.2rem;
+  }
+  .detalle-subtitulo {
+      font-size: 1.6rem;
+  }
+  .imagen-container {
+      height: 350px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .layout-container {
+      flex-direction: column;
+      max-width: 100%;
+      padding: 0 15px;
+  }
+  .sidebar {
+      display: none;
+  }
+  .news-content {
+      flex: 1;
+      width: 100%;
+      margin: 0;
+  }
+  .detalle-titulo {
+      font-size: 2rem;
+  }
+  .detalle-subtitulo {
+      font-size: 1.4rem;
+  }
+  .detalle-texto {
+      font-size: 1.4rem;
+  }
+  .imagen-container {
+      height: 300px;
+  }
+  .back-button {
+      font-size: 1.4rem;
+      padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+      font-size: 2rem;
+  }
+  .detalle-titulo {
+      font-size: 1.8rem;
+  }
+  .detalle-subtitulo {
+      font-size: 1.3rem;
+  }
+  .detalle-texto {
+      font-size: 1.2rem;
+  }
+  .imagen-container {
+      height: 250px;
+  }
+  .back-button {
+      font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+      padding: 15px;
+  }
+  header h1 {
+      font-size: 1.8rem;
+  }
+  .detalle-titulo {
+      font-size: 1.6rem;
+  }
+  .imagen-container {
+      height: 200px;
+  }
+  .back-button {
+      font-size: 1.1rem;
+      padding: 8px 16px;
+      bottom: 15px;
+  }
+}
+

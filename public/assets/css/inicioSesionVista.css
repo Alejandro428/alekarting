@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  overflow: hidden;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.login-left {
+  flex: 1 1 100%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  order: 2; 
+}
+
+.login-right {
+  flex: 1 1 100%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  order: 1; 
+}
+
+.titulo-bienvenida {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #000;
+  line-height: 1.2;
+}
+
+.titulo-bienvenida span {
+  color: #007BFF;
+}
+
+.logo-empresa {
+  width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.texto-descriptivo {
+  font-size: 1.2rem;
+  color: #000;
+  margin-bottom: 15px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.redes-sociales a img {
+  width: 35px;
+  height: 35px;
+}
+
+.titulo-sesion {
+  font-size: 1.8rem;
+  color: #000;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.texto-pequeno {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.texto-pequeno a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.texto-pequeno a:hover {
+  text-decoration: underline;
+}
+
+.form-login {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-login label {
+  font-size: 1rem;
+  color: #000;
+  font-weight: bold;
+}
+
+.form-login input[type="text"],
+.form-login input[type="password"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.form-login .mensaje-error {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.9rem !important;
+  color: red !important;
+}
+
+.btn-iniciar {
+  background: #007BFF;
+  color: #FFF;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-iniciar:hover {
+  background: #0056b3;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-top: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-back:hover {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:not(.btn-back):hover {
+  color: #1fbfdb;
+  transform: scale(1.05);
+}
+
+.mensaje-registro {
+  padding: 8px;
+  margin-bottom: 12px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.mensaje-negativo {
+  background-color: rgba(255, 0, 0, 1);
+  color: #fff;
+}
+
+.mensaje-positivo {
+  background-color: rgba(0, 128, 0, 0.8);
+  color: #fff;
+}
+
+@media (min-width: 600px) {
+  .login-left,
+  .login-right {
+    padding: 40px 30px;
+  }
+  
+  .titulo-bienvenida {
+    font-size: 2.2rem;
+  }
+  
+  .logo-empresa {
+    width: 170px;
+  }
+  
+  .texto-descriptivo {
+    font-size: 1.3rem;
+  }
+  
+  .titulo-sesion {
+    font-size: 2rem;
+  }
+  
+  .texto-pequeno {
+    font-size: 1.1rem;
+  }
+  
+  .form-login label {
+    font-size: 1.1rem;
+  }
+  
+  .form-login input[type="text"],
+  .form-login input[type="password"] {
+    font-size: 1.1rem;
+  }
+  
+  .btn-iniciar {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .login-container {
+    flex-wrap: nowrap;
+  }
+  
+  .login-left {
+    order: 1; 
+    padding: 50px;
+  }
+  
+  .login-right {
+    order: 2; 
+    padding: 50px;
+  }
+  
+  .titulo-bienvenida {
+    font-size: 2.5rem;
+  }
+  
+  .logo-empresa {
+    width: 200px;
+  }
+  
+  .texto-descriptivo {
+    font-size: 1.5rem;
+  }
+  
+  .redes-sociales a img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .titulo-sesion {
+    font-size: 2.2rem;
+  }
+  
+  .texto-pequeno {
+    font-size: 1.2rem;
+  }
+  
+  .form-login {
+    gap: 15px;
+    max-width: 400px;
+  }
+  
+  .form-login label {
+    font-size: 1.2rem;
+  }
+  
+  .form-login input[type="text"],
+  .form-login input[type="password"] {
+    font-size: 1.2rem;
+    padding: 12px;
+  }
+  
+  .btn-iniciar {
+    font-size: 1.2rem;
+    padding: 12px 18px;
+  }
+  
+  .btn-back {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .titulo-bienvenida {
+    font-size: 3rem;
+  }
+  
+  .logo-empresa {
+    width: 220px;
+  }
+  
+  .texto-descriptivo {
+    font-size: 1.7rem;
+  }
+  
+  .redes-sociales a img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .titulo-sesion {
+    font-size: 2.5rem;
+  }
+  
+  .texto-pequeno {
+    font-size: 1.3rem;
+  }
+  
+  .form-login label {
+    font-size: 1.3rem;
+  }
+  
+  .form-login input[type="text"],
+  .form-login input[type="password"] {
+    font-size: 1.3rem;
+  }
+  
+  .btn-iniciar {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .titulo-bienvenida {
+    font-size: 3.2rem;
+  }
+  
+  .texto-descriptivo {
+    font-size: 1.8rem;
+  }
+  
+  .titulo-sesion {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-left,
+  .login-right {
+    padding: 20px 15px;
+  }
+  
+  .titulo-bienvenida {
+    font-size: 1.8rem;
+  }
+  
+  .logo-empresa {
+    width: 130px;
+  }
+  
+  .texto-descriptivo {
+    font-size: 1.1rem;
+  }
+  
+  .titulo-sesion {
+    font-size: 1.6rem;
+  }
+  
+  .texto-pequeno {
+    font-size: 0.9rem;
+  }
+  
+  .form-login label {
+    font-size: 0.9rem;
+  }
+  
+  .form-login input[type="text"],
+  .form-login input[type="password"] {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+  
+  .btn-iniciar {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  
+  .redes-sociales a img {
+    width: 30px;
+    height: 30px;
+  }
+}

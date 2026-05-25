@@ -1,0 +1,16 @@
+# Desactiva el listado de directorios
+Options -Indexes
+ServerSignature Off
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Evita redirección infinita al acceder a /public
+    RewriteCond %{REQUEST_URI} !^/public/
+
+    # No redirigir si ya estamos en el directorio public/
+    RewriteCond %{REQUEST_URI} !^/codeigniterKarting/public/
+
+    # Redirige todo a /public solo si no estamos ya en public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

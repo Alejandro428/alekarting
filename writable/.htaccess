@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Redirige todas las solicitudes a index.php (excepto archivos existentes)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+    
+    # Permite acceso directo al favicon.ico
+    <Files "favicon.ico">
+        Require all granted
+        Allow from all
+    </Files>
+</IfModule>

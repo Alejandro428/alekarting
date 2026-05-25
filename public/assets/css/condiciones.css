@@ -1,0 +1,98 @@
+.terms-conditions-page {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f7ff; 
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+}
+
+.terms-conditions-page .terms-container {
+    max-width: 960px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 114, 206, 0.2);
+}
+
+.terms-conditions-page .header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.terms-conditions-page h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #005bb5; 
+}
+
+.terms-conditions-page h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #006fcc; 
+}
+
+.terms-conditions-page h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #004a8f;
+}
+
+.terms-conditions-page p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.terms-conditions-page .highlight-box {
+    background-color: #e6f0ff;
+    border-left: 5px solid #0072ce;
+    padding: 20px 25px;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 114, 206, 0.15);
+}
+
+.terms-conditions-page .highlight-box h3 {
+    margin-top: 0;
+    color: #004a8f;
+    display: flex;
+    align-items: center;
+}
+
+.terms-conditions-page .highlight-box .icon {
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+.terms-conditions-page .last-updated {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #005bb5;
+}
+
+.terms-conditions-page .privacy-link {
+    color: #0072ce;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .terms-conditions-page .terms-container {
+        padding: 20px 15px;
+    }
+
+    .terms-conditions-page h1 {
+        font-size: 1.8em;
+    }
+
+    .terms-conditions-page h2 {
+        font-size: 1.3em;
+    }
+}

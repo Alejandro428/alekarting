@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.register-container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.register-left {
+  position: relative;
+  flex: 1 1 300px;
+  overflow: hidden;
+  background: #F0F0F0;
+}
+
+.fondo-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  z-index: 2;
+}
+
+.contenido-left {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.contenido-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.titulo-bienvenida {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+  -webkit-text-stroke: 1px #000;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.titulo-bienvenida span {
+  color: #007BFF;
+}
+
+.logo-empresa {
+  width: 220px;
+  height: auto;
+  margin-top: auto;
+}
+
+.register-right {
+  flex: 1 1 300px;
+  padding: 60px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-registro {
+  font-size: 3.5rem;
+  color: #000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.subtitulo-registro {
+  font-size: 2rem;
+  color: #666;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-registro {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-registro label {
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column; 
+  width: 100%;
+  max-width: 700px;
+  padding: 0 10px;
+}
+
+.input-container input {
+  padding: 14px;
+  font-size: 1.6rem;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  margin-bottom: 10px; 
+  width: 100%; 
+}
+
+.input-container .mensaje-error {
+  font-size: 1.4rem;
+  color: red;
+  margin-top: 5px; 
+}
+
+.btn-registrar {
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: #FFF;
+  padding: 16px 32px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+}
+
+.btn-registrar:hover {
+  background: linear-gradient(135deg, #0056b3, #003580);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 86, 179, 0.6);
+}
+
+.acciones-secundarias {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.6rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-left: 14px;
+}
+
+.btn-back:hover {
+  transform: scale(1.1) rotate(-3deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.mensaje-registro {
+  padding: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.mensaje-negativo {
+  background-color: rgba(255, 0, 0, 0.8);
+  color: #fff;
+}
+
+.mensaje-positivo {
+  background-color: rgba(0, 128, 0, 0.8);
+  color: #fff;
+}
+
+#mensajeSeguridadContrasena,
+#mensajeCorreo {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.seguridad-baja {
+  color: red !important;
+}
+
+.seguridad-normal {
+  color: orange !important;
+}
+
+.seguridad-alta {
+  color: green !important;
+}
+
+.correo-valido {
+  color: green !important;
+}
+
+.correo-no-valido {
+  color: red !important;
+}
+
+@media (max-width: 768px) {
+  .register-container {
+    flex-direction: column;
+  }
+
+  .register-left,
+  .register-right {
+    flex: 1 1 100%;
+  }
+
+  .titulo-bienvenida {
+    font-size: 3rem;
+  }
+
+  .titulo-registro {
+    font-size: 2.5rem;
+  }
+
+  .subtitulo-registro {
+    font-size: 1.6rem;
+  }
+
+  .input-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .input-container input {
+    width: 100%;
+  }
+
+  .input-container .mensaje-error {
+    margin-left: 0;
+  }
+}

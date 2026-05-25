@@ -1,0 +1,25 @@
+# Habilitar CORS
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
+
+# Asegurar que Apache maneja correctamente las URLs de CodeIgniter
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirigir peticiones a la carpeta public (si CodeIgniter está instalado fuera de ella)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+
+    # Permitir el acceso al directorio API de CodeIgniter
+    RewriteCond %{REQUEST_URI} ^/public/.*$
+    RewriteRule ^(.*)$ - [L]
+</IfModule>
+
+# Seguridad básica: Bloquear acceso a archivos sensibles
+<FilesMatch "\.(htaccess|htpasswd|env|ini|log|sh|sql)$">
+    Require all denied
+</FilesMatch>

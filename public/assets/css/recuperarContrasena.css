@@ -1,0 +1,66 @@
+  body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.tamano-ampliado {
+  font-size: 1.1rem;
+}
+
+.control-form-grande {
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.card-form {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo-recuperacion {
+  max-height: 150px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.text-center.mt-4.fs-5 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.text-center.mt-4.fs-5 a {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .text-center.mt-4.fs-5 {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+  }
+
+  .card-form {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
