@@ -93,7 +93,11 @@ cp .env.example .env
 #    - JWT_SECRET (cadena aleatoria larga)
 
 # 5. Importar la base de datos
-#    (Pendiente: añadir alekarting.sql con el esquema)
+#    El dump (esquema + datos de prueba) está en database/karting_db.sql
+#    Desde phpMyAdmin: crear BD "karting_db" e importar database/karting_db.sql
+#    Desde CLI:
+#      mysql -u root -p -e "CREATE DATABASE karting_db CHARACTER SET utf8mb4;"
+#      mysql -u root -p karting_db < database/karting_db.sql
 
 # 6. Arrancar el servidor de desarrollo
 php spark serve
@@ -101,11 +105,24 @@ php spark serve
 
 Acceder a `http://localhost:8080`.
 
+## Base de datos
+
+El esquema completo y los datos de prueba están en `database/karting_db.sql`. Incluye:
+- Tablas: usuarios, tipos_usuario, empleados, carreras, eventos, reservas_eventos, noticias, pistas, franjas_horarias, etc.
+- Datos de prueba con usuarios de los 3 roles (cliente / empleado / admin).
+- Todas las contraseñas de los usuarios de prueba son `1234` (MD5: `351a10de42226e43ee37f10ac11a97a4`).
+
+**Usuarios de prueba destacados:**
+- `admin1` (rol Administrador) — `alej@gmail.com`
+- `Dani12` (rol Cliente) — `dani123@gmail.com`
+- `laugomez87` (rol Empleado) — `laugomez85@gmail.com`
+
 ## Seguridad
 
 - Las claves de Stripe y demás secretos **se leen exclusivamente desde `.env`** (nunca hardcodeadas en el código).
 - `.env` está incluido en `.gitignore`; solo se versiona `.env.example` como plantilla.
 - Las claves usadas durante el desarrollo fueron rotadas antes de publicar el repositorio.
+- El dump de BD incluye contraseñas hasheadas en MD5 (legado del proyecto académico) — **no usar este esquema de hashing en producción**.
 
 ## Capturas
 
